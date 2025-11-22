@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3qxh8n2y7jpt"]
+
+[ext_resource type="Script" path="res://minigames/dodgeball/dodgeball.gd" id="1_dodgeball"]
+[ext_resource type="Texture2D" uid="uid://cpd3m8x4yqw5t" path="res://minigames/dodgeball/dodgeball_sprite.png" id="2_sprite"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 20.0
+
+[node name="Dodgeball" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_dodgeball")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
