@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf63fgm4ejnvf"
-path="res://.godot/imported/WallCorner.png-374fd9810ba2a2a10da31c886d9557ee.ctex"
+uid="uid://dvqu6g026tvp1"
+path="res://.godot/imported/soccerball.png-f493097054aab4754e31f592e18b0de1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/WallCorner.png"
-dest_files=["res://.godot/imported/WallCorner.png-374fd9810ba2a2a10da31c886d9557ee.ctex"]
+source_file="res://minigames/pitch_penalties/Assets/soccerball.png"
+dest_files=["res://.godot/imported/soccerball.png-f493097054aab4754e31f592e18b0de1.ctex"]
 
 [params]
 

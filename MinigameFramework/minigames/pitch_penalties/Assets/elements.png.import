@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf63fgm4ejnvf"
-path="res://.godot/imported/WallCorner.png-374fd9810ba2a2a10da31c886d9557ee.ctex"
+uid="uid://crl73y4b51bg5"
+path="res://.godot/imported/elements.png-f0e4447c23b0a8113383b84791e1b71d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/WallCorner.png"
-dest_files=["res://.godot/imported/WallCorner.png-374fd9810ba2a2a10da31c886d9557ee.ctex"]
+source_file="res://minigames/pitch_penalties/Assets/elements.png"
+dest_files=["res://.godot/imported/elements.png-f0e4447c23b0a8113383b84791e1b71d.ctex"]
 
 [params]
 
