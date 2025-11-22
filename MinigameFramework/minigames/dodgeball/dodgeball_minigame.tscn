@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj5k8w3m4rqny"]
+
+[ext_resource type="Script" path="res://minigames/dodgeball/dodgeball_minigame.gd" id="1_minigame"]
+[ext_resource type="Texture2D" uid="uid://cnkeu612ob1v6" path="res://assets/player/FrontIdle.png" id="2_player_texture"]
+
+[sub_resource type="Gradient" id="Gradient_bg"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0.4, 0.6, 0.8, 1, 0.2, 0.3, 0.5, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bg"]
+gradient = SubResource("Gradient_bg")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(16, 20)
+
+[sub_resource type="GDScript" id="GDScript_player"]
+script/source = "extends CharacterBody2D
+
+var speed = 300.0
+var margin = 16.0
+
+func _physics_process(delta):
+	var direction = Vector2.ZERO
+	
+	if Input.is_action_pressed(\"up\"):
+		direction.y -= 1
+	if Input.is_action_pressed(\"down\"):
+		direction.y += 1
+	if Input.is_action_pressed(\"left\"):
+		direction.x -= 1
+	if Input.is_action_pressed(\"right\"):
+		direction.x += 1
+	
+	if direction != Vector2.ZERO:
+		direction = direction.normalized()
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
+	
+	move_and_slide()
+	
+	var viewport_size = get_viewport_rect().size
+	position.x = clamp(position.x, margin, viewport_size.x - margin)
+	position.y = clamp(position.y, margin, viewport_size.y - margin)
+"
+
+[node name="DodgeballMinigame" type="Node"]
+script = ExtResource("1_minigame")
+instruction = "Dodge the balls!"
+countdown_time = 10.0
+metadata/_custom_type_script = "uid://yiv2g3c50yqb"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_bg")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(640, 360)
+collision_layer = 2
+collision_mask = 0
+script = SubResource("GDScript_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_player_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="ResultLabel" type="Label" parent="."]
+visible = false
+offset_left = 440.0
+offset_top = 300.0
+offset_right = 840.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+

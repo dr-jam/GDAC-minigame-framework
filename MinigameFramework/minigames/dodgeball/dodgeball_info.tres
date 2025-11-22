@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MinigameInfo" load_steps=4 format=3 uid="uid://djkw8n3p2yqrt"]
+
+[ext_resource type="Texture2D" uid="uid://cpd3m8x4yqw5t" path="res://minigames/dodgeball/dodgeball_sprite.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://vk7irpeekqp4" path="res://scripts/minigame_info.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://bj5k8w3m4rqny" path="res://minigames/dodgeball/dodgeball_minigame.tscn" id="2_scene"]
+
+[resource]
+script = ExtResource("1_script")
+name = "Dodgeball"
+icon = ExtResource("1_icon")
+scene = ExtResource("2_scene")
+metadata/_custom_type_script = "uid://vk7irpeekqp4"
+
